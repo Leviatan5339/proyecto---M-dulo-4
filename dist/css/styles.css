@@ -1,0 +1,235 @@
+:root {
+  --bg: #0f1113;
+  --surface: #181b1f;
+  --surface-2: #20242a;
+  --line: #2c3138;
+  --text: #e8e6e1;
+  --muted: #9aa0a8;
+  --accent: #8fbf9f;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  padding-top: 72px; /* espacio para la navbar fija */
+}
+
+h1, h2, h3, h4, h5, .navbar-brand, .card-title {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  letter-spacing: .2px;
+}
+
+a { color: var(--accent); }
+a:hover { color: #b5dcc3; }
+
+/* Navbar */
+.navbar-custom {
+  background: rgba(15, 17, 19, .92);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(6px);
+}
+.navbar-custom .nav-link { color: var(--muted); }
+.navbar-custom .nav-link:hover,
+.navbar-custom .nav-link.active { color: var(--text); }
+.navbar-custom .navbar-brand { color: var(--text); font-size: 1.4rem; }
+.navbar-custom .navbar-toggler { border-color: var(--line); }
+
+/* Breadcrumb */
+.breadcrumb {
+  background: transparent;
+  padding: 1rem 0 .5rem;
+  margin: 0;
+}
+.breadcrumb-item + .breadcrumb-item::before { color: var(--muted); }
+.breadcrumb-item.active { color: var(--muted); }
+
+/* Banner */
+.banner img {
+  height: 420px;
+  object-fit: cover;
+  filter: brightness(.55);
+}
+.banner .carousel-caption {
+  bottom: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: left;
+  left: 8%;
+  right: 8%;
+}
+.banner .carousel-caption h2 { font-size: 2.4rem; }
+.carousel-inner { border-radius: .5rem; }
+
+/* Cards */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: .6rem;
+  overflow: hidden;
+  transition: transform .2s ease, border-color .2s ease;
+}
+.card:hover { transform: translateY(-4px); border-color: var(--accent); }
+.card-img-top { height: 190px; object-fit: cover; }
+.card-header, .card-footer {
+  background: var(--surface-2);
+  border-color: var(--line);
+}
+.card-header { font-size: .8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); }
+.card-text { color: var(--muted); }
+.precio { font-family: "Playfair Display", Georgia, serif; font-size: 1.2rem; }
+
+/* Botones */
+.btn-accent {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #0f1113;
+  font-weight: 600;
+}
+.btn-accent:hover { background: #a9d4b8; border-color: #a9d4b8; color: #0f1113; }
+.btn-outline-light { border-color: var(--line); }
+
+/* Tabla con scroll */
+.tabla-scroll {
+  max-height: 340px;
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: .5rem;
+  background: var(--surface);
+}
+.tabla-scroll .table { margin: 0; color: var(--text); min-width: 640px; }
+.tabla-scroll thead th {
+  position: sticky;
+  top: 0;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--line);
+  border-top: 0;
+  z-index: 1;
+}
+.tabla-scroll td, .tabla-scroll th { border-color: var(--line); vertical-align: middle; }
+.oi { margin-right: .4rem; color: var(--accent); font-size: .85rem; }
+
+/* Formulario */
+.form-panel {
+  margin: 0;
+  padding: 2rem;
+  background-color: #181b1f;
+  color: #e8e6e1;
+  border: 1px solid #2c3138;
+  border-radius: .6rem;
+}
+.form-control, .custom-select {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  color: var(--text);
+}
+.form-control:focus, .custom-select:focus {
+  background: var(--bg);
+  color: var(--text);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 .2rem rgba(143, 191, 159, .2);
+}
+.form-control::placeholder { color: #6b7179; }
+label { color: var(--muted); font-size: .9rem; }
+
+footer {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+@media (max-width: 767px) {
+  .banner img { height: 300px; }
+  .banner .carousel-caption h2 { font-size: 1.6rem; }
+  .form-panel { padding: 1.25rem; }
+}
+
+/* ===== Módulo 3 ===== */
+
+/* Dropdown de la navbar */
+.dropdown-menu {
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+}
+.dropdown-item { color: var(--muted); }
+.dropdown-item:hover { background: var(--surface); color: var(--text); }
+
+/* Pills / tabs */
+.nav-pills .nav-link { color: var(--muted); border-radius: 2rem; }
+.nav-pills .nav-link.active { background: var(--accent); color: #0f1113; font-weight: 600; }
+.nav-tabs { border-bottom: 1px solid var(--line); }
+.nav-tabs .nav-link { color: var(--muted); border: 0; }
+.nav-tabs .nav-link.active { background: var(--surface); color: var(--text); border-bottom: 2px solid var(--accent); }
+.tab-content {
+  margin: 0;
+  padding: 1.5rem;
+  background-color: #181b1f;
+  color: #e8e6e1;
+  border: 1px solid #2c3138;
+  border-radius: .6rem;
+}
+
+/* Collapse y accordion */
+.panel-collapse {
+  margin: 0;
+  padding: 1rem 1.25rem;
+  background-color: #181b1f;
+  color: #9aa0a8;
+  border: 1px solid #2c3138;
+  border-radius: .5rem;
+}
+.accordion .card { border-radius: .5rem; margin-bottom: .5rem; }
+.accordion .card:hover { transform: none; }
+.accordion .card-header { padding: 0; }
+.accordion .btn-link {
+  color: var(--text);
+  text-decoration: none;
+  width: 100%;
+  text-align: left;
+  padding: 1rem 1.25rem;
+}
+.accordion .btn-link:hover { color: var(--accent); }
+.accordion .card-body { color: var(--muted); }
+
+/* Modal */
+.modal-content {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--text);
+}
+.modal-header, .modal-footer { border-color: var(--line); }
+.close { color: var(--text); text-shadow: none; }
+
+/* Tooltip / popover */
+.popover { background: var(--surface-2); border-color: var(--line); }
+.popover-header { background: var(--surface); border-color: var(--line); color: var(--text); font-family: "Playfair Display", Georgia, serif; }
+.popover-body { color: var(--muted); }
+.bs-popover-top > .arrow::after, .bs-popover-auto[x-placement^="top"] > .arrow::after { border-top-color: var(--surface-2); }
+.card-title[data-toggle] { cursor: help; border-bottom: 1px dotted var(--muted); display: inline-block; }
+
+/* ===== Módulo 4: estados con las variables de color ===== */
+.btn-amarillo,
+.btn-amarillo:disabled {
+  background-color: #e0b84a;
+  border-color: #e0b84a;
+  color: #0f1113;
+  font-weight: 600;
+}
+
+.oi-circle-check { color: #8fbf9f; }
+.oi-circle-x { color: #d9645c; }
+
+.alert-success {
+  background-color: rgba(143, 191, 159, 0.15);
+  border-color: #8fbf9f;
+  color: #8fbf9f;
+}
+
+.close:hover { color: #d9645c; opacity: 1; }
+
+.form-control:invalid:focus {
+  border-color: #d9645c;
+  box-shadow: 0 0 0 0.2rem rgba(217, 100, 92, 0.25);
+}

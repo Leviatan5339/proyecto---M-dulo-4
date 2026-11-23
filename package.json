@@ -1,0 +1,24 @@
+{
+  "name": "raiz-maya-modulo-4",
+  "version": "1.0.0",
+  "description": "Proyecto Módulo 4: Sass, scripts de NPM y salida a producción",
+  "scripts": {
+    "scss": "sass --no-source-map css:css",
+    "watch:scss": "onchange \"css/*.scss\" -- npm run scss",
+    "lite": "lite-server",
+    "start": "concurrently \"npm run watch:scss\" \"npm run lite\"",
+    "clean": "rimraf dist",
+    "copyfiles": "copyfiles index.html productos.html contacto.html css/styles.css js/script.js dist",
+    "build": "npm run clean && npm run scss && npm run copyfiles"
+  },
+  "author": "Canek Pérez Cortés",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "copyfiles": "^2.4.1",
+    "lite-server": "^2.6.1",
+    "onchange": "^7.1.0",
+    "rimraf": "^5.0.5",
+    "sass": "^1.77.0"
+  }
+}
